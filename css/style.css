@@ -1,0 +1,188 @@
+:root {
+  --basic-white: #ffffff;
+  --basic-black: #000000;
+  --basic-blue: #00ffff;
+}
+
+html {
+  box-sizing: border-box;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-width: 1200px;
+  min-height: 100vh;
+  font-family: "Arial", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: var(--basic-black);
+  background-color: var(--basic-white);
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip-path: inset(100%);
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+}
+
+/* === Стилизация сетки каталога с помощью flex === */
+
+.flex-catalog {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  min-height: 200px;
+}
+
+.flex-catalog__item {
+  margin-bottom: 20px;
+  width: 280px;
+  background-color: var(--basic-blue);
+}
+
+/* === Изменение направления оси с дефолтного состояния === */
+
+.second .flex-catalog {
+  flex-direction: row-reverse;
+}
+
+/* === Выравнивание одного элемента по поперечной оси === */
+
+.third .flex-catalog__item:first-child {
+  align-self: flex-start;
+}
+
+/* === Выравнивание ряда flex-end === */
+
+.fourth .flex-catalog {
+  align-items: flex-end;
+}
+
+/* === Стилизация сетки каталога с помощью inline-block === */
+
+.inline-block-catalog {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.inline-block-catalog__item {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  display: inline-block;
+  width: 280px;
+  background-color: var(--basic-blue);
+}
+
+.inline-block-catalog__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* === Стилизация сетки каталога с помощью float === */
+
+.float-catalog {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.float-catalog__item {
+  margin-bottom: 20px;
+  margin-right: 20px;
+  float: left;
+  width: 285px;
+  background-color: var(--basic-blue);
+}
+
+.float-catalog__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+/* === Стилизация html-таблицы === */
+
+.table__cell {
+  width: 300px;
+  background-color: var(--basic-blue);
+  border: 1px solid var(--basic-black);
+}
+
+/* === Стилизация таблицы, состоящей из div === */
+
+.eighth__table {
+  display: table;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+
+.eighth__row {
+  display: table-row;
+}
+
+.eighth__cell {
+  display: table-cell;
+  width: 300px;
+  background-color: var(--basic-blue);
+  border: 1px solid var(--basic-black);
+}
+
+/* === Стилизация слайдера === */
+
+.ninth__slider {
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 256px;
+  height: 256px;
+  overflow: hidden;
+}
+
+.ninth__slider-line {
+  position: relative;
+  display: flex;
+  height: 256px;
+  width: 1024px;
+  left: 0;
+  transition: all ease-in-out 1s;
+}
+
+.ninth__image {
+  width: 256px;
+  height: 256px;
+  object-fit: cover;
+}
+
+.ninth__controls {
+  margin: 0 auto;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: space-evenly;
+  width: 256px;
+}
+
+.button {
+  padding: 15px 25px;
+}
